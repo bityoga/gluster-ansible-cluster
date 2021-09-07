@@ -21,7 +21,7 @@
         gluster_cluster_private_hosts: "{{ glusterfs_cluster_private_ips.split(',') }}"
   gluster_volume:
         state: "{{ gluster_cluster_state | default('present') }}"
-        volume: "{{ gluster_cluster_volume }}"
+        volume: "{{ gluster_cluster_volume }} force"
         bricks: "{{ gluster_cluster_bricks }}"
         # Since cluster, is required for only probbing the nodes in the internal network, we use the private ips. 
         # Else in aws, the /etc/hosts needs to be modified. 
