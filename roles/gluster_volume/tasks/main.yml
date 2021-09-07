@@ -8,6 +8,11 @@
   run_once: true
   with_items: "{{ gluster_cluster_hosts }}"
 
+- name: Set volume
+  shell: gluster volume set {{ gluster_cluster_volume }} config.transport {{ gluster_cluster_transport | default('tcp') }}
+  run_once: true
+ 
+
 - name: Create a volume
   vars:
         # Get the private ips for each host as a string where each host ip is seperated by a comma
