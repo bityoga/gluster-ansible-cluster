@@ -8,7 +8,7 @@
   run_once: true
   with_items: "{{ gluster_cluster_hosts }}"
 
-- name: Set volume
+- name: Set gluster volume
   shell: gluster volume set {{ gluster_cluster_volume }} config.transport tcp
   run_once: true
  
