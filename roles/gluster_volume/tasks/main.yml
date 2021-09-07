@@ -9,7 +9,7 @@
   with_items: "{{ gluster_cluster_hosts }}"
 
 - name: Set volume
-  shell: gluster volume set {{ gluster_cluster_volume }} config.transport {{ default('tcp') }}
+  shell: gluster volume set {{ gluster_cluster_volume }} config.transport tcp
   run_once: true
  
 
